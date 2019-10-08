@@ -29,10 +29,16 @@ extension RAMAnimatedTabBarItem {
     /// The current badge value
     open override var badgeValue: String? {
         get {
-            return badge?.text
+            return (badge as? UILabel)?.text
         }
         set(newValue) {
-
+            if newValue == " ", let iconView = iconView {
+                badge?.removeFromSuperview()
+                let badge = BadgeDot(size: 6.0)
+                badge.addBadgeOn(view: iconView.icon)
+                self.badge = badge
+                return
+            }
             if newValue == nil {
                 badge?.removeFromSuperview()
                 badge = nil
@@ -40,11 +46,14 @@ extension RAMAnimatedTabBarItem {
             }
 
             if let iconView = iconView, let contanerView = iconView.icon.superview, badge == nil {
-                badge = RAMBadge.badge()
-                badge?.addBadgeOnView(contanerView)
+                let badge = RAMBadge.badge()
+                badge.text = newValue
+                badge.addBadgeOnView(iconView.icon)
+                self.badge = badge
+                return
             }
 
-            badge?.text = newValue
+            (badge as? UILabel)?.text = newValue
         }
     }
 }
@@ -78,7 +87,7 @@ open class RAMAnimatedTabBarItem: UITabBarItem {
     open var bgSelectedColor: UIColor = UIColor.clear
 
     //  The current badge value
-    open var badge: RAMBadge? // use badgeValue to show badge
+    open var badge: UIView? // use badgeValue to show badge
 
     // Container for icon and text in UITableItem.
     open var iconView: (icon: UIImageView, textLabel: UILabel)?
