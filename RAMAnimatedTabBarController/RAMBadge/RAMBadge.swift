@@ -28,7 +28,7 @@ open class RAMBadge: UILabel {
     internal var centerXConstraint: NSLayoutConstraint?
 
     open class func badge() -> RAMBadge {
-        return RAMBadge(frame: CGRect(x: 0, y: 0, width: 18, height: 18))
+        return RAMBadge(frame: CGRect(x: 0, y: 0, width: 14.0, height: 14.0))
     }
 
     public override init(frame: CGRect) {
@@ -38,11 +38,6 @@ open class RAMBadge: UILabel {
         layer.cornerRadius = frame.size.width / 2
 
         configureNumberLabel()
-
-        translatesAutoresizingMaskIntoConstraints = false
-
-        // constraints
-        createSizeConstraints(frame.size)
     }
 
     open override var intrinsicContentSize: CGSize {
@@ -55,61 +50,21 @@ open class RAMBadge: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // PRAGMA: create
-
-    internal func createSizeConstraints(_ size: CGSize) {
-        let widthConstraint = NSLayoutConstraint(
-            item: self,
-            attribute: .width,
-            relatedBy: .greaterThanOrEqual,
-            toItem: nil,
-            attribute: .notAnAttribute,
-            multiplier: 1,
-            constant: size.width)
-        addConstraint(widthConstraint)
-
-        let heightConstraint = NSLayoutConstraint(
-            item: self,
-            attribute: .height,
-            relatedBy: .equal,
-            toItem: nil,
-            attribute: NSLayoutConstraint.Attribute.notAnAttribute,
-            multiplier: 1,
-            constant: size.height)
-        addConstraint(heightConstraint)
-    }
-
     fileprivate func configureNumberLabel() {
         textAlignment = .center
-        font = .systemFont(ofSize: 13)
+        font = .systemFont(ofSize: 12.0)
         textColor = .white
     }
 
     // PRAGMA: public
 
     open func addBadgeOnView(_ onView: UIView) {
-
+        self.frame = CGRect(
+            x: onView.bounds.width - self.intrinsicContentSize.width / 3.0,
+            y: -self.frame.height / 3.0,
+            width: self.intrinsicContentSize.width,
+            height: self.intrinsicContentSize.height
+        )
         onView.addSubview(self)
-
-        // create constraints
-        let top = NSLayoutConstraint(item: self,
-                                           attribute: .top,
-                                           relatedBy: .equal,
-                                           toItem: onView,
-                                           attribute: .top,
-                                           multiplier: 1,
-                                           constant: 3)
-        onView.addConstraint(top)
-        topConstraint = top
-
-        let centerX = NSLayoutConstraint(item: self,
-                                               attribute: .centerX,
-                                               relatedBy: .equal,
-                                               toItem: onView,
-                                               attribute: .centerX,
-                                               multiplier: 1,
-                                               constant: 10)
-        onView.addConstraint(centerX)
-        centerXConstraint = centerX
     }
 }
