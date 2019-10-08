@@ -284,6 +284,9 @@ open class RAMAnimatedTabBarController: UITabBarController {
         if !containers.isEmpty {
             createCustomIcons(containers)
         }
+        containers.values.forEach {
+            self.tabBar.bringSubviewToFront($0)
+        }
     }
 
     override open func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -327,7 +330,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
         var index = 0
         for item in items {
 
-            guard let container = containers["container\(items.count - 1 - index)"] else {
+            guard let container = containers["container\(index)"] else {
                 fatalError()
             }
             container.tag = index
