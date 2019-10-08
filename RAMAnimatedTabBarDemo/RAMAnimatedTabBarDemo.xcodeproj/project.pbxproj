@@ -26,6 +26,8 @@
 		84D4B7B01DB0D38F00EE38C6 /* RAMItemAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41469D1A1B944D0037F03C /* RAMItemAnimationProtocol.swift */; };
 		9C824DD7234C82B500DE0E47 /* ColortherapyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C824DD6234C82B500DE0E47 /* ColortherapyTabBar.swift */; };
 		9C824DD9234C830400DE0E47 /* PushMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C824DD8234C830400DE0E47 /* PushMeViewController.swift */; };
+		9CF2B23B234CBE5E00808049 /* BadgeDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF2B23A234CBE5E00808049 /* BadgeDot.swift */; };
+		9CF2B23C234CBE6500808049 /* BadgeDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF2B23A234CBE5E00808049 /* BadgeDot.swift */; };
 		CE4146781A1B923D0037F03C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4146771A1B923D0037F03C /* AppDelegate.swift */; };
 		CE41467A1A1B923D0037F03C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4146791A1B923D0037F03C /* ViewController.swift */; };
 		CE41467D1A1B923D0037F03C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE41467B1A1B923D0037F03C /* Main.storyboard */; };
@@ -84,6 +86,7 @@
 		84D4B7A01DB0D35500EE38C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C824DD6234C82B500DE0E47 /* ColortherapyTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColortherapyTabBar.swift; sourceTree = "<group>"; };
 		9C824DD8234C830400DE0E47 /* PushMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushMeViewController.swift; sourceTree = "<group>"; };
+		9CF2B23A234CBE5E00808049 /* BadgeDot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeDot.swift; sourceTree = "<group>"; };
 		CE4146721A1B923D0037F03C /* Animated Tab Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Animated Tab Bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4146761A1B923D0037F03C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4146771A1B923D0037F03C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				84BC64211C22E4C800B89B79 /* RAMBadge.swift */,
+				9CF2B23A234CBE5E00808049 /* BadgeDot.swift */,
 			);
 			path = RAMBadge;
 			sourceTree = "<group>";
@@ -371,6 +375,7 @@
 					};
 					CE4146711A1B923D0037F03C = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 67DWYWE7RK;
 						LastSwiftMigration = 1020;
 					};
 				};
@@ -442,6 +447,7 @@
 				5ADAB94B209B51E5006CCD85 /* RAMAnimatedTabBarController+BottomLine.swift in Sources */,
 				84D4B7B01DB0D38F00EE38C6 /* RAMItemAnimationProtocol.swift in Sources */,
 				84D4B7AB1DB0D37F00EE38C6 /* RAMFumeAnimation.swift in Sources */,
+				9CF2B23C234CBE6500808049 /* BadgeDot.swift in Sources */,
 				84D4B7AA1DB0D37B00EE38C6 /* RAMAnimatedTabBarController.swift in Sources */,
 				84D4B7AC1DB0D38100EE38C6 /* RAMBounceAnimation.swift in Sources */,
 				84D4B7AE1DB0D38700EE38C6 /* RAMFrameItemAnimation.swift in Sources */,
@@ -458,6 +464,7 @@
 				CE41467A1A1B923D0037F03C /* ViewController.swift in Sources */,
 				5ADAB94A209B0FA8006CCD85 /* RAMAnimatedTabBarController+BottomLine.swift in Sources */,
 				CE90A8431A1C8DD3002D8931 /* RAMRotationAnimation.swift in Sources */,
+				9CF2B23B234CBE5E00808049 /* BadgeDot.swift in Sources */,
 				F3E056BE1A2DD57600F33DDA /* RAMFumeAnimation.swift in Sources */,
 				CE41469F1A1B944D0037F03C /* RAMTransitionItemAnimations.swift in Sources */,
 				9C824DD7234C82B500DE0E47 /* ColortherapyTabBar.swift in Sources */,
@@ -727,7 +734,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 67DWYWE7RK;
 				INFOPLIST_FILE = RAMAnimatedTabBarDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -746,7 +753,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 67DWYWE7RK;
 				INFOPLIST_FILE = RAMAnimatedTabBarDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
