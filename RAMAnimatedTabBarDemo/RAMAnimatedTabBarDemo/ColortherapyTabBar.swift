@@ -32,8 +32,8 @@ class ColortherapyTabBar: RAMAnimatedTabBarController {
         secondTab.viewControllers = [secondPushMeVC]
         let secondTabBarItem = RAMAnimatedTabBarItem(
             title: "Challenges",
-            image: UIImage(named: "icon_user"),
-            selectedImage: UIImage(named: "icon_user")
+            image: UIImage(named: "challenges-icon"),
+            selectedImage: UIImage(named: "challenges-icon")
         )
         secondTabBarItem.animation = RAMFumeAnimation()
         secondTab.tabBarItem = secondTabBarItem
@@ -50,5 +50,12 @@ class ColortherapyTabBar: RAMAnimatedTabBarController {
         thirdTab.tabBarItem = thirdTabBarItem
 
         setViewControllers([firstTab, secondTab, thirdTab], animated: false)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        viewControllers?[1].tabBarItem.badgeValue = " "
+        viewControllers?[2].tabBarItem.badgeValue = "123"
     }
 }
