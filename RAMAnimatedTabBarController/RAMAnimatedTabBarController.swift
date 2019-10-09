@@ -387,11 +387,12 @@ open class RAMAnimatedTabBarController: UITabBarController {
             textLabel.textColor = item.textColor
             textLabel.font =  UIFont.systemFont(ofSize: item.textFontSize)
             textLabel.textAlignment = .center
+            let textLabelOffset = 11.0 + iconImageSize.height
             textLabel.frame = CGRect(
                 x: 0.0,
-                y: 11.0 + iconImageSize.height,
+                y: textLabelOffset,
                 width: container.bounds.width,
-                height: textLabel.font.lineHeight
+                height: container.bounds.height - textLabelOffset
             )
             container.addSubview(textLabel)
 
