@@ -268,8 +268,24 @@ open class RAMAnimatedTabBarController: UITabBarController {
     }
 
     open override var selectedIndex: Int {
-        didSet {
-            self.setBottomLinePosition(index: selectedIndex)
+        get {
+            return super.selectedIndex
+        }
+        set {
+            guard newValue < self.animatedItems.count, newValue >= 0 else {
+                return
+            }
+            // To prevent from deselecting on init
+            guard super.selectedIndex < self.animatedItems.count, super.selectedIndex >= 0 else {
+                super.selectedIndex = newValue
+                return
+            }
+            let oldItem = self.animatedItems[super.selectedIndex]
+            let newItem = self.animatedItems[newValue]
+            oldItem.deselectAnimation()
+            newItem.playAnimation()
+            super.selectedIndex = newValue
+            self.setBottomLinePosition(index: newValue)
         }
     }
 
